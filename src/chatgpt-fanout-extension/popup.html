@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatGPT Fanout Inspector</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 12px;
+        min-width: 320px;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin: 0 0 8px 0;
+      }
+
+      label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 6px;
+        box-sizing: border-box;
+      }
+
+      button {
+        margin-top: 8px;
+        margin-right: 6px;
+        padding: 6px 10px;
+        cursor: pointer;
+      }
+
+      .request {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 8px;
+        margin-top: 8px;
+        word-break: break-word;
+      }
+
+      .timestamp {
+        color: #555;
+        font-size: 11px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ChatGPT Fanout Inspector</h1>
+    <div>
+      <label for="conversationId">Conversation ID</label>
+      <input id="conversationId" type="text" placeholder="Paste ChatGPT conversation ID" />
+      <div>
+        <button id="saveConversation">Save</button>
+        <button id="clearRequests">Clear Requests</button>
+      </div>
+    </div>
+
+    <div id="status" role="status" aria-live="polite"></div>
+
+    <h2 style="font-size: 14px; margin-top: 12px">Captured requests</h2>
+    <div id="requests"></div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
